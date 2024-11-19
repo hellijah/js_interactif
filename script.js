@@ -57,6 +57,26 @@ navbar.addEventListener("dblclick", () => {
 
 
 /* fonctionnalité 6 */
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(function(card) {
+  let viewBtn = card.querySelector(".btn-success");
+  let cardImg = card.querySelector(".card-img-top");
+  let cardText = card.querySelector(".card-text");
+
+  viewBtn.addEventListener("mouseover", function() {
+    if (cardImg.style.width === "20%") {
+      cardImg.style.width = "";
+      cardText.style.display = "block";
+    } else {
+      cardImg.style.width = "20%";
+      cardText.style.display = "none";
+    }
+  });
+});
+
+
+/*
 const cards = document.querySelectorAll(".card");
 
 cards.forEach((card) => {
@@ -69,27 +89,27 @@ cards.forEach((card) => {
   let isMinimized = false;
 
   // Événement "mouseover" sur le bouton "View"
-  viewButton.addEventListener("mouseover", () => {
-    if (!isMinimized) {
-      // Réduire la card si elle n'est pas déjà réduite
-      cardImage.style.width = "20%";
-      cardText.style.display = "none";
-      isMinimized = true; // Mettre à jour l'état
-    }
-  });
+//   viewButton.addEventListener("mouseover", () => {
+//     if (!isMinimized) {
+//       // Réduire la card si elle n'est pas déjà réduite
+//       cardImage.style.width = "20%";
+//       cardText.style.display = "none";
+//       isMinimized = true; // Mettre à jour l'état
+//     }
+//   });
 
-  // Événement "mouseover" pour restaurer la card
-  viewButton.addEventListener("mouseout", () => {
-    if (isMinimized) {
-      // Restaurer la card uniquement si elle est minimisée
-      cardImage.style.width = "";
-      cardText.style.display = "";
-      isMinimized = false; // Mettre à jour l'état
-    }
-  });
-});
+//   // Événement "mouseover" pour restaurer la card
+//   viewButton.addEventListener("mouseover", () => {
+//     if (isMinimized) {
+//       // Restaurer la card uniquement si elle est minimisée
+//       cardImage.style.width = "";
+//       cardText.style.display = "";
+//       isMinimized = false; // Mettre à jour l'état
+//     }
+//   });
+// });
 
-  /*
+
   viewButton.addEventListener("mouseenter", () => {
     cardText.style.display = "none"; // Cache le texte
     cardImage.style.width = "20%"; // Réduit l'image
@@ -100,8 +120,8 @@ cards.forEach((card) => {
     cardImage.style.width = ""; // Taille normale
   });
 });
-*/
 
+*/
 
 /* fonctionnalité 7 */
 const rightButton = document.querySelector(".btn.btn-secondary");
